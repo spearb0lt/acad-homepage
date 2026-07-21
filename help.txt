@@ -1,0 +1,1 @@
+(These changes are in the acad-homepage repo — commit update_local.py and the workflow timeout when you push. Optional: add google_scholar_crawler/results/ to .gitignore so the generated files don't clutter main.) Anything else?
