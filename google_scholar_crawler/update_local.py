@@ -63,8 +63,23 @@ def fetch_and_write():
         json.dump({"name": name, "citedby": citedby, "publications": publications}, f, ensure_ascii=False)
     with open(os.path.join(OUT_DIR, "gs_data_shieldsio.json"), "w", encoding="utf-8") as f:
         json.dump({"schemaVersion": 1, "label": "citations", "message": str(citedby)}, f, ensure_ascii=False)
-    print(f"Wrote results/gs_data.json and gs_data_shieldsio.json  (citedby={citedby}, name={name})")
+
+    # Per-paper shields.io endpoint files, one per publication, so each paper can
+    # show its own live Google Scholar citation badge (linked to that paper's
+    # Scholar citation page). Filename replaces the ':' in the id with '_'.
+    for pid, info in publications.items():
+        safe = pid.replace(":", "_")
+        with open(os.path.join(OUT_DIR, f"gs_cite_{safe}.json"), "w", encoding="utf-8") as f:
+            json.dump({"schemaVersion": 1, "label": "citations",
+                       "message": str(info["num_citations"])}, f, ensure_ascii=False)
+
+    print(f"Wrote results/gs_data.json, gs_data_shieldsio.json and "
+          f"{len(publications)} per-paper badge file(s)  (citedby={citedby}, name={name})")
     return citedby
+
+
+def result_json_files():
+    return [fn for fn in os.listdir(OUT_DIR) if fn.endswith(".json")]
 
 
 def git(args, cwd, check=True):
@@ -79,13 +94,14 @@ def push_to_branch():
     except Exception:
         raise SystemExit("Could not read the 'origin' remote. Run this from inside the repo.")
 
+    files = result_json_files()
     tmp = tempfile.mkdtemp(prefix="gs-stats-")
     try:
-        for fn in ("gs_data.json", "gs_data_shieldsio.json"):
+        for fn in files:
             shutil.copy(os.path.join(OUT_DIR, fn), os.path.join(tmp, fn))
         git(["init", "-q"], cwd=tmp)
         git(["checkout", "-q", "-B", BRANCH], cwd=tmp)
-        git(["add", "gs_data.json", "gs_data_shieldsio.json"], cwd=tmp)
+        git(["add"] + files, cwd=tmp)
         git(["-c", "user.name=scholar-bot", "-c", "user.email=scholar-bot@local",
              "commit", "-qm", "Update citation data"], cwd=tmp)
         r = git(["push", "-f", origin, f"HEAD:{BRANCH}"], cwd=tmp, check=False)
@@ -108,7 +124,7 @@ def purge_cdn():
     citation counts can lag a full day behind a push (and a stale empty
     `publications: {}` copy blanks the per-paper spans entirely).
     """
-    for fn in ("gs_data.json", "gs_data_shieldsio.json"):
+    for fn in result_json_files():
         purge_url = f"https://purge.jsdelivr.net/gh/spearb0lt/acad-homepage@{BRANCH}/{fn}"
         try:
             urllib.request.urlopen(urllib.request.Request(purge_url), timeout=30).read()

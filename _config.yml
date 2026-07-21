@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Shubhro Dev"
-description              : "Shubhro Dev is an AI/ML researcher and Computer Science undergraduate at RGIPT, working on large language models, multimodal deep learning, federated learning and time-series analysis."
+description              : "I am passionate about working on large language models, multimodal deep learning, natural language processing, and time-series analysis."
 repository               : "spearb0lt/acad-homepage"   # the GitHub repo that hosts this site (used for the Google Scholar citation badge)
 google_scholar_stats_use_cdn : true
 
@@ -35,7 +35,7 @@ author:
   avatar           : "images/prof_pic.jpg"
   bio              : "AI/ML Researcher · CSE undergrad at RGIPT · Research Intern at Siemens"
   location         : "Bengaluru, India"
-  employer         : "Siemens"
+  # employer         : "Siemens"
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=rNBVr8gAAAAJ"
   email            : "shubhro2004@gmail.com"
@@ -50,7 +50,7 @@ author:
   github           : "spearb0lt"
   google_plus      :
   keybase          :
-  instagram        : "shubhro_x"
+  instagram        : #"shubhro_x"
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "shubhro-dev"

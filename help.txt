@@ -4,3 +4,30 @@
 
 wo branches, two purposes: main = your site source (edit, commit, push here). google-scholar-stats = auto-managed citation data — never checkout/edit/git add . on it.
 Update citations: just run python google_scholar_crawler/update_local.py. It fetches + force-pushes to google-scholar-stats via a throwaway temp repo, so it never dirties your working tree or main.
+
+
+
+
+"AI/ML Researcher · CSE undergrad at RGIPT · Research Intern at Siemens" = author.bio → edit _config.yml:36. (Used at author-profile.html:13.)
+
+"Shubhro Dev is an AI/ML researcher and Computer Science undergraduate at RGIPT…" = site.description → edit _config.yml:10. (Shown at author-profile.html:19-20.)
+
+One heads-up on description: it's also your SEO meta description (head/custom.html:28 and the Twitter/OpenGraph tags), so editing line 10 changes both the sidebar text and what search engines/social previews show. That's usually fine, just so you know it's dual-purpose.
+
+Remember any _config.yml edit needs a rebuild (push for live, restart for local) to take effect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
