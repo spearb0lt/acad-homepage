@@ -1,1 +1,6 @@
-(These changes are in the acad-homepage repo — commit update_local.py and the workflow timeout when you push. Optional: add google_scholar_crawler/results/ to .gitignore so the generated files don't clutter main.) Anything else?
+(These changes are in the acad-homepage repo — commit update_local.py and the workflow timeout when you push. Optional: add google_scholar_crawler/results/ to .gitignore so the generated files don't clutter main.) 
+
+
+
+wo branches, two purposes: main = your site source (edit, commit, push here). google-scholar-stats = auto-managed citation data — never checkout/edit/git add . on it.
+Update citations: just run python google_scholar_crawler/update_local.py. It fetches + force-pushes to google-scholar-stats via a throwaway temp repo, so it never dirties your working tree or main.
