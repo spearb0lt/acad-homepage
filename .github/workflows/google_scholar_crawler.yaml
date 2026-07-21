@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15   # Google Scholar often blocks CI IPs; fail fast instead of hanging for hours
     steps:
     - uses: actions/checkout@v2
     - name: Install Reqs
