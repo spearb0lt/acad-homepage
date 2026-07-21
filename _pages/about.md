@@ -3,9 +3,6 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 {% if site.google_scholar_stats_use_cdn %}
@@ -29,22 +26,103 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 - *2025.11*: &nbsp;🏆 Secured **Global Rank 10** at the **Meta Hacker Cup 2025 (AI Track)**.
 - *2025.01*: &nbsp;🎉 Our paper *Lung Cancer Identification from CT Scans using a Soft-attention enabled Deep Transfer Learning Model* was accepted at **IEEE ISACC 2025**.
 
+<style>
+  .pub-venue, .proj-tag { display:inline-block; color:#fff; background:#00369f; padding:1px 8px; border-radius:4px; font-size:0.72em; font-weight:700; vertical-align:middle; white-space:nowrap; }
+  .pub-venue.review { background:#b7791f; }
+  .pub-venue.prep { background:#6c757d; }
+  .proj-tag.live { background:#188038; }
+  .pub-item, .proj-item { padding:0.55em 0 0.75em 0; border-bottom:1px solid #efefef; }
+  .pub-authors, .proj-desc { font-size:0.92em; }
+</style>
+
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISACC 2025</div><img src='images/lung_cancer_isacc.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+<div markdown="1">
 
-[Lung Cancer Identification from CT Scans using a Soft-attention enabled Deep Transfer Learning Model](https://doi.org/10.1109/ISACC65211.2025.10969319)
-
-**Shubhro Dev**, P. S. Roy, N. Chakraborty, Ram Sarkar
-
-[**Paper**](https://doi.org/10.1109/ISACC65211.2025.10969319)
-- A soft-attention enabled deep transfer learning model that detects and classifies lung cancer from both CT scans and histopathological images, generalising across multiple public datasets. Published in the *2025 3rd International Conference on Intelligent Systems, Advanced Computing and Communication (ISACC)*, pp. 254-259.
-</div>
+<div class="pub-item" markdown="1">
+<span class="pub-venue">ISACC 2025</span> &nbsp;**[Lung Cancer Identification from CT Scans using a Soft-attention enabled Deep Transfer Learning Model](https://doi.org/10.1109/ISACC65211.2025.10969319)**<br>
+<span class="pub-authors"><strong>Shubhro Dev</strong>, P. S. Roy, N. Chakraborty, Ram Sarkar. <em>IEEE ISACC 2025</em>, pp. 254-259.</span><br>
+[DOI](https://doi.org/10.1109/ISACC65211.2025.10969319) · [Code](https://github.com/spearb0lt/Lung-Cancer-Detection-Using-DL) &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Lung-Cancer-Detection-Using-DL?style=social)
 </div>
 
-- **A Differentially Private Hybrid Transformer-Mamba Architecture for Industrial Predictive Maintenance on Multivariate Time Series Data**, **Shubhro Dev**, A. Ghosh, Debasis Das, *IEEE Transactions on Intelligent Transportation Systems* (under review, 2026)
-- **A Multiview Multiobjective Clustering Approach to Unsupervised Extractive Summarization**, **Shubhro Dev**, J. Konwar, M. Aggarwal, S. Mishra, *manuscript in preparation (target: AACL 2026)*
+<div class="pub-item" markdown="1">
+<span class="pub-venue review">IEEE T-ITS · under review</span> &nbsp;**A Differentially Private Hybrid Transformer-Mamba Architecture for Industrial Predictive Maintenance on Multivariate Time Series Data**<br>
+<span class="pub-authors"><strong>Shubhro Dev</strong>, A. Ghosh, Debasis Das. <em>IEEE Transactions on Intelligent Transportation Systems</em> (2026).</span><br>
+[Code](https://github.com/spearb0lt/Scania) &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Scania?style=social)
+</div>
+
+<div class="pub-item" markdown="1">
+<span class="pub-venue prep">AACL 2026 · in preparation</span> &nbsp;**A Multiview Multiobjective Clustering Approach to Unsupervised Extractive Summarization**<br>
+<span class="pub-authors"><strong>Shubhro Dev</strong>, J. Konwar, M. Aggarwal, S. Mishra. <em>Manuscript in preparation (target: AACL 2026)</em>.</span>
+</div>
+
+</div>
+
+# 💻 Personal Projects
+
+<div markdown="1">
+
+<div class="proj-item" markdown="1">
+**[CodeGen — Autonomous Competitive Programming Solver](https://github.com/spearb0lt/my-codegen-api2)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/my-codegen-api2?style=social)<br>
+<span class="proj-desc">End-to-end AI solver (FastAPI + Gemini, multimodal) built for the Meta Hacker Cup 2025 AI Track, where it powered my **Global Rank 10** finish. Ships with a reusable [dev-kit](https://github.com/spearb0lt/CodeGen-Hacker-Cup-AI-devkit).</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[SENTRAL — Multi-Spectrum Stock Analysis](https://github.com/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis?style=social)<br>
+<span class="proj-desc">Fuses deep fundamental scoring, 35 technical indicators, multi-LLM news sentiment and LSTM/Transformer forecasting into explainable buy/hold/sell signals.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Context-Aware Multimodal Knowledge Retrieval](https://github.com/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System?style=social)<br>
+<span class="proj-desc">A multimodal RAG pipeline over PDFs that retrieves across text, tables, figures and formulas and returns source-cited answers.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[LitigatAI](https://github.com/spearb0lt/LitigatAI)** &nbsp; <span class="proj-tag live">Live demo</span> &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/LitigatAI?style=social)<br>
+<span class="proj-desc">An AI litigation platform for Indian legal practice with 10 integrated tools. [Live demo](https://litigat-ai.streamlit.app/).</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Consumer Commission Complaint Agent](https://github.com/spearb0lt/Consumer-Commission-Complaint-Agent)** &nbsp; <span class="proj-tag live">Live demo</span> &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Consumer-Commission-Complaint-Agent?style=social)<br>
+<span class="proj-desc">A guided-intake agent that turns a plain-language grievance into a file-ready Indian Consumer Commission complaint. [Live demo](https://consumer-commission-complaint.streamlit.app/).</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Indian Legal RAG](https://github.com/spearb0lt/Legal-RAG)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Legal-RAG?style=social)<br>
+<span class="proj-desc">A citation-grounded RAG chatbot over Indian statutes and case law, with hybrid vector plus BM25 retrieval.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Federated Cervical Cancer Detection](https://github.com/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset?style=social)<br>
+<span class="proj-desc">Cervical cancer detection on Pap smear images, comparing FedDrop, FedAvg and HeteroFL federated-learning strategies.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Federated Heart Disease Prediction](https://github.com/spearb0lt/Heart-Disease-Prediction-with-Biomarkers-using-Federated-Learning)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Heart-Disease-Prediction-with-Biomarkers-using-Federated-Learning?style=social)<br>
+<span class="proj-desc">Predicting heart disease from clinical biomarkers using federated learning, keeping patient data on-client.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Face Liveliness Detection](https://github.com/spearb0lt/Face-Liveliness-Detection-Using-DL)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Face-Liveliness-Detection-Using-DL?style=social)<br>
+<span class="proj-desc">A lightweight, fast anti-spoofing model that distinguishes real faces from fake images and videos (about 30ms).</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Job-Aligner](https://github.com/spearb0lt/Job-Aligner-Latex-to-PDF-Generator)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Job-Aligner-Latex-to-PDF-Generator?style=social)<br>
+<span class="proj-desc">Tailors a LaTeX resume to any job description (checkbox toggles, optional LLM pre-selection) and compiles a submission-ready PDF.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Gesture Video Controller](https://github.com/spearb0lt/Gesture-Video-Cotroller)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Gesture-Video-Cotroller?style=social)<br>
+<span class="proj-desc">A webcam hand-tracking system to control media playback with single-hand and dual-hand gestures.</span>
+</div>
+
+<div class="proj-item" markdown="1">
+**[Text-to-Handwriting Converter](https://github.com/spearb0lt/Text-to-Handwriting-converter)** &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Text-to-Handwriting-converter?style=social)<br>
+<span class="proj-desc">Converts typed text (including tables) into realistic handwriting and exports it as an A4 PDF.</span>
+</div>
+
+</div>
 
 # 🎖 Honors and Awards
 - *2025* Global Rank 10, Meta Hacker Cup 2025 (AI Track).
