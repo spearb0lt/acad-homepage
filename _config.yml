@@ -18,11 +18,11 @@ url                      : "https://spearb0lt.github.io/acad-homepage"
 baseurl                  : ""
 
 # google analytics
-google_analytics_id      : "G-4YL5W0Z598" # get google_analytics_id from https://analytics.google.com/analytics/
+google_analytics_id      : "G-WDVCZXSYYF" # get google_analytics_id from https://analytics.google.com/analytics/
 
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
+bing_site_verification   : 0AF97B606F1781DCDFCED108205B8FAE # get bing_site_verification from https://www.bing.com/webmasters/about
 baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
 
 # Site Author

@@ -20,4 +20,36 @@
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
+<!-- SEO enhancements (fill gaps not covered by seo.html) -->
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="{{ site.author.name }}">
+<meta name="keywords" content="Shubhro Dev, AI, machine learning, deep learning, large language models, LLM, NLP, computer vision, federated learning, differential privacy, time-series, RGIPT, Siemens">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.author.avatar | prepend: '/' | prepend: site.url }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ site.title }}">
+<meta name="twitter:description" content="{{ site.description }}">
+<meta name="twitter:image" content="{{ site.author.avatar | prepend: '/' | prepend: site.url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shubhro Dev",
+  "url": "{{ site.url }}",
+  "image": "{{ site.author.avatar | prepend: '/' | prepend: site.url }}",
+  "jobTitle": "AI/ML Researcher",
+  "worksFor": { "@type": "Organization", "name": "Siemens" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Rajiv Gandhi Institute of Petroleum Technology (RGIPT)" },
+  "email": "mailto:shubhro2004@gmail.com",
+  "sameAs": [
+    "https://github.com/spearb0lt",
+    "https://www.linkedin.com/in/shubhro-dev",
+    "https://scholar.google.com/citations?user=rNBVr8gAAAAJ",
+    "https://orcid.org/0009-0007-1590-1839",
+    "https://www.researchgate.net/profile/Shubhro-Dev"
+  ]
+}
+</script>
+
 <!-- end custom head snippets -->
