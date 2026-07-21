@@ -17,6 +17,10 @@ google_scholar_stats_use_cdn : true
 url                      : "https://spearb0lt.github.io/acad-homepage"
 baseurl                  : ""
 
+# Favicon: by default the "SD" icon in images/ is used. To use an emoji favicon
+# instead, uncomment the next line and set any emoji (e.g. "🧠", "⚛️", "📈").
+# favicon_emoji            : "🧠"
+
 # google analytics
 google_analytics_id      : "G-WDVCZXSYYF" # get google_analytics_id from https://analytics.google.com/analytics/
 

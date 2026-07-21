@@ -1,6 +1,10 @@
+{% if site.favicon_emoji %}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2252%22 font-size=%2278%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>{{ site.favicon_emoji }}</text></svg>">
+{% else %}
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+{% endif %}
 <link rel="manifest" href="images/site.webmanifest">
 
 <meta name="msapplication-TileColor" content="#000000">

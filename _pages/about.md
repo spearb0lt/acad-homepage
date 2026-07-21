@@ -90,12 +90,54 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 <div markdown="1">
 
 <div class="proj-item" markdown="1">
+**[Cross-Industry Privacy-Preserving Predictive Maintenance](https://github.com/spearb0lt/Scania)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Scania?style=social)](https://github.com/spearb0lt/Scania)
+
+- Preprocessed the SCANIA-X dataset and engineered a hybrid architecture that combines numerical and categorical features of the dataset into transformer embeddings and a TabTransformer for least information loss. Also implemented various differential privacy (DP) algorithms (Spectral-DP, DP-SGD) to protect training data. Designed a global model architecture that would perform well for other PdM datasets that involve numerical, categorical, or any multimodal features in their datasets.
+- Infused a Federated training approach based on the flwr library, allowing global model aggregation across heterogeneous clients having different computing power, parameters, and hyperparameters; mirroring real-life industrial equipment.
+- Presently it is the best RUL prediction model on the dataset with an MSE of 2725 whilst keeping training data privacy. Developed an advanced MIA that considers white-box, gray-box, and black-box features, along with time-series specific seasonality/trend features; achieved a MIA success rate (AUC) of 49.12% and MIA accuracy of 49.59%, thus solidifying the claim.
+- Implemented the DP mechanisms from scratch (including a Renyi Differential Privacy / Moments accountant) and a two-stage model pairing a Transformer time-series encoder with a TabTransformer head. This work is under review at IEEE T-ITS.
+</div>
+
+
+
+<div class="proj-item" markdown="1">
+**[Context-Aware Multimodal Knowledge Retrieval](https://github.com/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System?style=social)](https://github.com/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System)
+
+- Built a context-aware parser to automatically extract and separately process multimodal content (images, tables, equations, graphs, text) and summarize each modality into vector embeddings. Employed modality-specific pipelines and selected appropriate LLMs per content type to improve summary quality; stored embeddings and summaries in ChromaDB using Hugging Face embeddings.
+- Designed a multi-vector retrieval strategy that links document summaries to original content for improved context preservation. On query, the system retrieves relevant multimodal content and generates comprehensive, source-cited answers that reference text, table data, and image insights.
+- Runs three parallel retrieval pipelines (LLM-summary embeddings, raw-atomic content, and CLIP text-to-image search), parsing documents with Docling and using Groq LLaMA 3.3 70B alongside Gemini 2.5 Flash Vision.
+</div>
+
+
+
+<div class="proj-item" markdown="1">
+**[SENTRAL - Multi-Spectrum Stock Analysis](https://github.com/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis?style=social)](https://github.com/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis)
+
+- Conducted a fundamental analysis of target companies using 14 metrics (P/E, P/B, Debt, ROE, etc.) plus Piotroski F-Score and Altman Z-Score via custom functions. Executed technical analysis using 18 indicators (EMA20/50, SMA20/50, RSI14, MACD, ATR, etc.) and performed peer comparisons across sector companies.
+- Collected news via seven APIs and web scraping, filtered items by relevance score, then fed the curated corpus to 10 LLMs (including finance-tuned and SOTA reasoning models) for sentiment extraction and signal generation. Visualized correlations and feature importance to support decision making.
+- Applied Transformer and LSTM models to forecast price trends for reference and ensembled sentiment with fundamental and technical indicators to compute buy/hold/sell probabilities. Boosted newbie portfolio worth by +45% over five months.
+- Packaged as two production-ready Streamlit apps (a deep single-stock analyzer and a screener.in-style screener) with a 20-strategy backtesting engine, Monte Carlo simulation and automated HTML/PDF report generation.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<div class="proj-item" markdown="1">
 **[LitigatAI](https://github.com/spearb0lt/LitigatAI)** &nbsp; [<span class="proj-tag live">Live demo</span>](https://litigat-ai.streamlit.app/) &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/LitigatAI?style=social)](https://github.com/spearb0lt/LitigatAI)
 
 - Streamlit multi-page AI platform for Indian advocates, litigation interns and legal researchers, bundling **10 integrated tools** across the litigation workflow.
 - Automates the most time-consuming tasks, from extracting key dates out of case files to drafting counter-arguments against an opponent's pleadings.
 - Layered LLM stack: Google Gemini 2.5 Flash (primary), Groq Llama 3.3 70B (fast routing) and an OpenAI-compatible fallback.
-</div>
+</div> -->
 
 <div class="proj-item" markdown="1">
 **[CodeGen - Autonomous Competitive Programming Solver](https://github.com/spearb0lt/my-codegen-api2)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/my-codegen-api2?style=social)](https://github.com/spearb0lt/my-codegen-api2)
@@ -106,52 +148,55 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 - Ships a reusable [dev-kit](https://github.com/spearb0lt/CodeGen-Hacker-Cup-AI-devkit) with the prototype history and CP_GEN client tooling.
 </div>
 
-<div class="proj-item" markdown="1">
-**[SENTRAL - Multi-Spectrum Stock Analysis](https://github.com/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis?style=social)](https://github.com/spearb0lt/SENTRAL-Multi-Spectrum-Stock-Analysis)
 
-- End-to-end equity-analysis platform combining deep fundamental scoring (DCF, Altman Z-Score, Piotroski F-Score, ratios) with 35 technical indicators.
-- Aggregates news from 13 sources and scores sentiment with 10 LLMs; forecasts prices with LSTM, Transformer and Monte Carlo models.
-- Fuses all three spectra into a composite BUY/HOLD/SELL signal with a 20-strategy backtesting engine; boosted a beginner portfolio by **+45% over five months**.
-</div>
-
-<div class="proj-item" markdown="1">
-**[Context-Aware Multimodal Knowledge Retrieval](https://github.com/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System?style=social)](https://github.com/spearb0lt/Context-Aware-Multimodal-Knowledge-Retrieval-System)
-
-- Production-grade multimodal RAG over PDFs, parsing text, tables, figures, formulas and form fields with Docling.
-- Runs three parallel retrieval pipelines: LLM-summary embeddings, raw-atomic content, and CLIP text-to-image visual search.
-- Uses Groq LLaMA 3.3 70B and Gemini 2.5 Flash Vision with BGE embeddings, returning merged, source-cited answers.
-</div>
-
+<!-- 
 <div class="proj-item" markdown="1">
 **[Consumer Commission Complaint Agent](https://github.com/spearb0lt/Consumer-Commission-Complaint-Agent)** &nbsp; [<span class="proj-tag live">Live demo</span>](https://consumer-commission-complaint.streamlit.app/) &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Consumer-Commission-Complaint-Agent?style=social)](https://github.com/spearb0lt/Consumer-Commission-Complaint-Agent)
 
 - Streamlit six-step intake wizard that turns a plain-language grievance into a **file-ready Consumer Commission petition**.
 - Jurisdiction-routes the complaint per the 2021 Pecuniary Rules and drafts authentic Indian pleading style (numbered paragraphs, CPA 2019 citations, annexures) via a constrained Gemini pipeline.
 - Exports a DOCX and PDF along with an e-Daakhil filing checklist.
-</div>
-
+</div> -->
+<!-- 
 <div class="proj-item" markdown="1">
 **[Indian Legal RAG](https://github.com/spearb0lt/Legal-RAG)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Legal-RAG?style=social)](https://github.com/spearb0lt/Legal-RAG)
 
 - Citation-grounded RAG chatbot over Indian statutes and case law that forces every answer to carry verifiable, paragraph-level citations.
 - Hybrid retrieval combining dense vector embeddings with BM25, fused via reciprocal rank fusion, refusing claims its retrieval cannot ground.
 - Two modes: Q&A over statutes and cases, and Case Outcome Prediction (similar past cases plus likely verdicts). Built to address the IL-TUR (ACL 2024) gap.
-</div>
+</div> -->
 
-<div class="proj-item" markdown="1">
-**[Federated Cervical Cancer Detection](https://github.com/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset?style=social)](https://github.com/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset)
+<!-- <div class="proj-item" markdown="1">
+**[Lung Cancer Detection with Soft Attention](https://github.com/spearb0lt/Lung-Cancer-Detection-Using-DL)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Lung-Cancer-Detection-Using-DL?style=social)](https://github.com/spearb0lt/Lung-Cancer-Detection-Using-DL)
 
+- Soft-attention enabled deep transfer-learning model that detects and classifies lung cancer from both CT scans and histopathological images.
+- Studies attention, PCA, colour-channel splitting and image partitioning across multiple public datasets to generalise across multi-source medical imagery.
+- Published at **IEEE ISACC 2025** (see Publications above).
+</div> -->
+
+<!-- <div class="proj-item" markdown="1">
+**[Federated Cervical Cancer Detection](https://github.com/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset?style=social)](https://github.com/spearb0lt/Cervical-Cancer-Detection-implementing-FL-using-Pap-Smear-Dataset) -->
+<!-- 
 - Cervical cancer detection on a Pap smear dataset, trained in a privacy-preserving federated setting where data never leaves the client.
 - Implements and compares three federated-learning strategies: Federated Dropout (FedDrop), FedAvg and HeteroFL.
 - Studies the communication and computation trade-offs across heterogeneous, non-IID clients.
-</div>
+</div> -->
 
+
+<!-- 
 <div class="proj-item" markdown="1">
 **[Federated Heart Disease Prediction](https://github.com/spearb0lt/Heart-Disease-Prediction-with-Biomarkers-using-Federated-Learning)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Heart-Disease-Prediction-with-Biomarkers-using-Federated-Learning?style=social)](https://github.com/spearb0lt/Heart-Disease-Prediction-with-Biomarkers-using-Federated-Learning)
 
 - Predicts heart disease from **11 clinical biomarkers across 918 subjects** using federated learning.
 - Only model updates are shared and aggregated into a global model, keeping sensitive patient records on-client.
-</div>
+</div> -->
+</div> 
+
+
+<!-- 
+# 💻 Important Tools
+
+<div markdown="1">
 
 <div class="proj-item" markdown="1">
 **[Face Liveliness Detection](https://github.com/spearb0lt/Face-Liveliness-Detection-Using-DL)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Face-Liveliness-Detection-Using-DL?style=social)](https://github.com/spearb0lt/Face-Liveliness-Detection-Using-DL)
@@ -169,6 +214,7 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 - Preserves the original fonts and layout and never modifies your base `.tex`.
 </div>
 
+
 <div class="proj-item" markdown="1">
 **[Gesture Video Controller](https://github.com/spearb0lt/Gesture-Video-Cotroller)** &nbsp; [![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Gesture-Video-Cotroller?style=social)](https://github.com/spearb0lt/Gesture-Video-Cotroller)
 
@@ -183,7 +229,7 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 - Exports clean, multi-page A4 PDFs; available both as notebooks and a Streamlit app.
 </div>
 
-</div>
+</div> -->
 
 # 🎖 Honors and Awards
 - *2025* Global Rank 10, Meta Hacker Cup 2025 (AI Track).

@@ -96,10 +96,25 @@ def push_to_branch():
                 "(the same credentials you use for the repo)."
             )
         print(f"Pushed citation data to the '{BRANCH}' branch of {origin}")
-        print("The badge updates via jsDelivr (cached ~12h). To refresh now, open:")
-        print(f"  https://purge.jsdelivr.net/gh/spearb0lt/acad-homepage@{BRANCH}/gs_data_shieldsio.json")
+        purge_cdn()
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+
+
+def purge_cdn():
+    """Bust the jsDelivr cache so the site sees the new data immediately.
+
+    jsDelivr caches gh files for ~12h; without this the badge and per-paper
+    citation counts can lag a full day behind a push (and a stale empty
+    `publications: {}` copy blanks the per-paper spans entirely).
+    """
+    for fn in ("gs_data.json", "gs_data_shieldsio.json"):
+        purge_url = f"https://purge.jsdelivr.net/gh/spearb0lt/acad-homepage@{BRANCH}/{fn}"
+        try:
+            urllib.request.urlopen(urllib.request.Request(purge_url), timeout=30).read()
+            print(f"Purged jsDelivr cache: {fn}")
+        except Exception as e:
+            print(f"Could not purge {fn} ({e}); open this once to refresh: {purge_url}")
 
 
 if __name__ == "__main__":
