@@ -49,9 +49,18 @@ def fetch_and_write():
     name_match = re.search(r'id=\"gsc_prf_in\">([^<]+)<', html)
     name = name_match.group(1) if name_match else "Shubhro Dev"
 
+    # Per-paper citation counts, keyed by Google Scholar author_pub_id
+    # (matches the `data=` attribute used by the show_paper_citations spans in about.md).
+    ids = re.findall(r'citation_for_view=([\w-]+:[\w-]+)', html)
+    counts = re.findall(r'class=\"gsc_a_ac[^\"]*\"[^>]*>(\d*)<', html)
+    publications = {}
+    for i, pid in enumerate(ids):
+        c = counts[i] if i < len(counts) else ""
+        publications[pid] = {"num_citations": int(c) if c else 0}
+
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, "gs_data.json"), "w", encoding="utf-8") as f:
-        json.dump({"name": name, "citedby": citedby, "publications": {}}, f, ensure_ascii=False)
+        json.dump({"name": name, "citedby": citedby, "publications": publications}, f, ensure_ascii=False)
     with open(os.path.join(OUT_DIR, "gs_data_shieldsio.json"), "w", encoding="utf-8") as f:
         json.dump({"schemaVersion": 1, "label": "citations", "message": str(citedby)}, f, ensure_ascii=False)
     print(f"Wrote results/gs_data.json and gs_data_shieldsio.json  (citedby={citedby}, name={name})")
