@@ -1,9 +1,12 @@
 name: Get Citation Data
 
-on: 
- page_build: 
- schedule:
-  - cron:  '0 8 * * *'
+on:
+  workflow_dispatch:      # lets you run it manually from the Actions tab ("Run workflow")
+  push:
+    branches: [main]      # runs whenever you push to main
+  page_build:             # runs after a GitHub Pages build (needs Pages enabled)
+  schedule:
+    - cron: '0 8 * * *'   # and daily at 08:00 UTC
 
 jobs:
   build:
