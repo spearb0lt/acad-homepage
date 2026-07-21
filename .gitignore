@@ -2,4 +2,3 @@ _site/
 push.sh
 .DS_Store
 google_scholar_crawler/results/
-google_scholar_crawler/update_local.py

@@ -42,7 +42,7 @@ You can find my publications on <a href='https://scholar.google.com/citations?us
 <div class="pub-item" markdown="1">
 <span class="pub-venue">ISACC 2025</span> &nbsp;**[Lung Cancer Identification from CT Scans using a Soft-attention enabled Deep Transfer Learning Model](https://doi.org/10.1109/ISACC65211.2025.10969319)**<br>
 <span class="pub-authors"><strong>Shubhro Dev</strong>, P. S. Roy, N. Chakraborty, Ram Sarkar. <em>IEEE ISACC 2025</em>, pp. 254-259.</span><br>
-[DOI](https://doi.org/10.1109/ISACC65211.2025.10969319) · [Code](https://github.com/spearb0lt/Lung-Cancer-Detection-Using-DL) &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Lung-Cancer-Detection-Using-DL?style=social)
+[DOI](https://doi.org/10.1109/ISACC65211.2025.10969319) · [PDF](  pdf={https://github.com/user-attachments/files/19899861/IEEE.ISACC.2025.Lung_Cancer_Identification_from_CT_Scans_using_a_Soft-attention_enabled_Deep_Transfer_Learning_Model.pdf) · [Code](https://github.com/spearb0lt/Lung-Cancer-Detection-Using-DL) &nbsp; ![GitHub stars](https://img.shields.io/github/stars/spearb0lt/Lung-Cancer-Detection-Using-DL?style=social)
 </div>
 
 <div class="pub-item" markdown="1">
