@@ -20,7 +20,33 @@ Remember any _config.yml edit needs a rebuild (push for live, restart for local)
 
 
 
+Steps for each new paper once it's accepted
+When a new paper appears on your Google Scholar profile, do this:
 
+1. Get the paper's Scholar id (author_pub_id).
+Open your Scholar profile, click the paper. The URL will contain:
+...citation_for_view=rNBVr8gAAAAJ:XXXXXXXXXXX
+Copy the whole rNBVr8gAAAAJ:XXXXXXXXXXX part (your user id, a colon, then the paper's id).
+
+2. Fill in that paper's row in about.md.
+Each pending paper already has a commented template. Uncomment it and set:
+
+the Scholar link → citation_for_view=rNBVr8gAAAAJ:XXXX
+the badge image → the file name uses the id with the colon replaced by an underscore: gs_cite_rNBVr8gAAAAJ_XXXX.json
+the Dimensions badge → set data-doi="<the paper DOI>" (only if it has a DOI)
+3. Add the paper to the fallback table in update_local.py.
+Under MANUAL_PUBLICATIONS, add a line:
+
+
+"rNBVr8gAAAAJ:XXXX": 0,   # <paper short name>
+Put its current citation count (0 if brand new). This is the safety net for when Scholar blocks the scrape.
+
+4. Publish + commit.
+
+
+cd "C:\Users\Shubhro Dev\Documents\GitHub\acad-homepage\google_scholar_crawler"
+python update_local.py
+Then commit the about.md and script changes to main and push.
 
 
 
